@@ -10,12 +10,7 @@ const getHealthStatus = (req, res, next) => {
             res.status(SERVICE_UNAVAILABLE).json(result);
             next();
         } else {
-            const payload = {
-                message: "all good!!"
-            }
-            send(payload).then(() => {
-                res.status(OK).json(result);
-            });
+            res.status(OK).json(result);
         }
     });
 };
